@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.11.3 on win32)" generated="20230615 14:44:35.189" rpa="false" schemaversion="4">
+<suite id="s1" name="pythonProject" source="C:\Users\Administrateur\PycharmProjects\pythonProject">
+<suite id="s1-s1" name="Testsuites" source="C:\Users\Administrateur\PycharmProjects\pythonProject\testsuites">
+<suite id="s1-s1-s1" name="AUTH UrlConnexion" source="C:\Users\Administrateur\PycharmProjects\pythonProject\testsuites\AUTH_UrlConnexion.robot">
+<test id="s1-s1-s1-t1" name="Valid Authentication" line="9">
+<kw name="Try Authentication">
+<arg>${USERNAME_A}</arg>
+<arg>${PASSWORD_A}</arg>
+<arg>${URLCAVALIDE}</arg>
+<arg>${BROWSER}</arg>
+<doc>Saisir credentials et tenter de s'identifier</doc>
+<kw name="Open Browser To Login Page">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230615 14:44:35.377" level="INFO">Opening browser 'chrome' to base url 'http://credit-auto.qsiconseil.ma/'.</msg>
+<status status="PASS" starttime="20230615 14:44:35.377" endtime="20230615 14:44:37.328"/>
+</kw>
+<kw name="Wait Until Location Is" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" starttime="20230615 14:44:37.330" endtime="20230615 14:44:37.335"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${LOC_BTNACCESCREDITAUTO}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20230615 14:44:37.336" level="INFO">Clicking link '//*[@id="lnkAccesCreditAuto"]'.</msg>
+<status status="PASS" starttime="20230615 14:44:37.335" endtime="20230615 14:44:37.952"/>
+</kw>
+<status status="PASS" starttime="20230615 14:44:35.377" endtime="20230615 14:44:37.952"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${LOC_INPUTUSERNAME}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20230615 14:44:37.952" endtime="20230615 14:44:37.987"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${LOC_INPUTPASSWORD}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230615 14:44:37.987" endtime="20230615 14:44:37.998"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LOC_INPUTUSERNAME}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230615 14:44:37.998" level="INFO">Typing text 'acd' into text field '//*[@id="username"]'.</msg>
+<status status="PASS" starttime="20230615 14:44:37.998" endtime="20230615 14:44:38.078"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LOC_INPUTPASSWORD}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230615 14:44:38.079" level="INFO">Typing text 'acial!acd2018' into text field '//*[@id="password"]'.</msg>
+<status status="PASS" starttime="20230615 14:44:38.078" endtime="20230615 14:44:38.158"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${LOC_BTNSECONNECTER}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230615 14:44:38.159" level="INFO">Clicking button '//*[@id="page-top"]/div[2]/div/div/form/fieldset/button'.</msg>
+<status status="PASS" starttime="20230615 14:44:38.158" endtime="20230615 14:44:38.868"/>
+</kw>
+<status status="PASS" starttime="20230615 14:44:35.376" endtime="20230615 14:44:38.868"/>
+</kw>
+<kw name="Wait Until Location Is" library="SeleniumLibrary">
+<arg>${URLCAINDEXVALIDE}</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" starttime="20230615 14:44:38.869" endtime="20230615 14:44:38.874"/>
+</kw>
+<kw name="Check Welcome Page">
+<arg>${USERNAME_A}</arg>
+<doc>Vérifications sur la page d'accueil d'utilisateur identifié (index)</doc>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${INDEX_TITRE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230615 14:44:38.879" level="INFO">Page title is 'Crédit Auto | QSI Conseil'.</msg>
+<status status="PASS" starttime="20230615 14:44:38.875" endtime="20230615 14:44:38.880"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${LOC_DIVBIENVENUE}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230615 14:44:38.903" level="INFO">Element '//*[@id="page-top"]/div[1]' is displayed.</msg>
+<status status="PASS" starttime="20230615 14:44:38.880" endtime="20230615 14:44:38.903"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${LOC_INDEX_TXT_USERNAME}</arg>
+<arg>${username}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20230615 14:44:38.927" level="INFO">Element '//*[@id="navbarNavDropdown"]/div[2]/i' contains text 'acd'.</msg>
+<status status="PASS" starttime="20230615 14:44:38.904" endtime="20230615 14:44:38.927"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${LOC_INDEX_TXT_PROFILENAME}</arg>
+<arg>${INDEX_TXT_VOUSETES}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20230615 14:44:38.946" level="INFO">Element '//*[@id="page-top"]/div[2]/div/pre/b[2]' contains text 'L'Administrateur de Crédit Auto'.</msg>
+<status status="PASS" starttime="20230615 14:44:38.927" endtime="20230615 14:44:38.946"/>
+</kw>
+<kw name="Page Should Contain Link" library="SeleniumLibrary">
+<arg>${LOC_LNK_ACCUEIL}</arg>
+<doc>Verifies link identified by ``locator`` is found from current page.</doc>
+<msg timestamp="20230615 14:44:38.962" level="INFO">Current page contains link '//*[@id="lnkAccueil"]'.</msg>
+<status status="PASS" starttime="20230615 14:44:38.946" endtime="20230615 14:44:38.962"/>
+</kw>
+<kw name="Page Should Contain Link" library="SeleniumLibrary">
+<arg>${LOC_LNK_CREDIT}</arg>
+<doc>Verifies link identified by ``locator`` is found from current page.</doc>
+<msg timestamp="20230615 14:44:38.976" level="INFO">Current page contains link '//*[@id="lnkCredit"]'.</msg>
+<status status="PASS" starttime="20230615 14:44:38.962" endtime="20230615 14:44:38.976"/>
+</kw>
+<kw name="Page Should Contain Link" library="SeleniumLibrary">
+<arg>${LOC_LNK_ADMISSIBILITE}</arg>
+<doc>Verifies link identified by ``locator`` is found from current page.</doc>
+<msg timestamp="20230615 14:44:38.991" level="INFO">Current page contains link '//*[@id="lnkVerifierAdmissibilite"]'.</msg>
+<status status="PASS" starttime="20230615 14:44:38.977" endtime="20230615 14:44:38.991"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${LOC_TXT_CONNECTE}</arg>
+<arg>${username}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20230615 14:44:39.008" level="INFO">Element '//*[@id="page-top"]/div[2]/div/pre/b[1]' contains text 'acd'.</msg>
+<status status="PASS" starttime="20230615 14:44:38.991" endtime="20230615 14:44:39.008"/>
+</kw>
+<status status="PASS" starttime="20230615 14:44:38.875" endtime="20230615 14:44:39.008"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${LOC_LNKDECONNEXION}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20230615 14:44:39.009" level="INFO">Clicking link '//*[@id="lnkDeconnexion"]'.</msg>
+<status status="PASS" starttime="20230615 14:44:39.008" endtime="20230615 14:44:39.377"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230615 14:44:39.378" endtime="20230615 14:44:41.450"/>
+</kw>
+<doc>Cas de test passant</doc>
+<tag>AUTH</tag>
+<tag>VALID</tag>
+<status status="PASS" starttime="20230615 14:44:35.376" endtime="20230615 14:44:41.451"/>
+</test>
+<test id="s1-s1-s1-t2" name="Invalid Authentication" line="20">
+<try>
+<branch type="TRY">
+<kw name="Try Authentication">
+<arg>${USERNAME_A_INV}</arg>
+<arg>${PASSWORD_A}</arg>
+<arg>${URLCAVALIDE}</arg>
+<arg>${BROWSER}</arg>
+<doc>Saisir credentials et tenter de s'identifier</doc>
+<kw name="Open Browser To Login Page">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230615 14:44:41.458" level="INFO">Opening browser 'chrome' to base url 'http://credit-auto.qsiconseil.ma/'.</msg>
+<status status="PASS" starttime="20230615 14:44:41.457" endtime="20230615 14:44:43.348"/>
+</kw>
+<kw name="Wait Until Location Is" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" starttime="20230615 14:44:43.348" endtime="20230615 14:44:43.354"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${LOC_BTNACCESCREDITAUTO}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20230615 14:44:43.354" level="INFO">Clicking link '//*[@id="lnkAccesCreditAuto"]'.</msg>
+<status status="PASS" starttime="20230615 14:44:43.354" endtime="20230615 14:44:43.949"/>
+</kw>
+<status status="PASS" starttime="20230615 14:44:41.457" endtime="20230615 14:44:43.950"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${LOC_INPUTUSERNAME}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20230615 14:44:43.950" endtime="20230615 14:44:43.980"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${LOC_INPUTPASSWORD}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230615 14:44:43.980" endtime="20230615 14:44:43.991"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LOC_INPUTUSERNAME}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230615 14:44:43.991" level="INFO">Typing text 'acdd' into text field '//*[@id="username"]'.</msg>
+<status status="PASS" starttime="20230615 14:44:43.991" endtime="20230615 14:44:44.076"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LOC_INPUTPASSWORD}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230615 14:44:44.076" level="INFO">Typing text 'acial!acd2018' into text field '//*[@id="password"]'.</msg>
+<status status="PASS" starttime="20230615 14:44:44.076" endtime="20230615 14:44:44.150"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${LOC_BTNSECONNECTER}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230615 14:44:44.150" level="INFO">Clicking button '//*[@id="page-top"]/div[2]/div/div/form/fieldset/button'.</msg>
+<status status="PASS" starttime="20230615 14:44:44.150" endtime="20230615 14:44:44.553"/>
+</kw>
+<status status="PASS" starttime="20230615 14:44:41.456" endtime="20230615 14:44:44.553"/>
+</kw>
+<status status="PASS" starttime="20230615 14:44:41.456" endtime="20230615 14:44:44.553"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Log" library="BuiltIn">
+<arg>Username invalide : test OK</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20230615 14:44:44.554" endtime="20230615 14:44:44.554"/>
+</kw>
+<status status="NOT RUN" starttime="20230615 14:44:44.553" endtime="20230615 14:44:44.554"/>
+</branch>
+<status status="PASS" starttime="20230615 14:44:41.456" endtime="20230615 14:44:44.554"/>
+</try>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230615 14:44:44.554" endtime="20230615 14:44:46.633"/>
+</kw>
+<doc>Cas de test non passant</doc>
+<tag>AUTH</tag>
+<tag>INVALID</tag>
+<status status="PASS" starttime="20230615 14:44:41.455" endtime="20230615 14:44:46.633"/>
+</test>
+<test id="s1-s1-s1-t3" name="Valid Landing" line="30">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URLCAVALIDE}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230615 14:44:46.635" level="INFO">Opening browser 'chrome' to base url 'http://credit-auto.qsiconseil.ma/'.</msg>
+<status status="PASS" starttime="20230615 14:44:46.635" endtime="20230615 14:44:48.472"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230615 14:44:48.473" endtime="20230615 14:44:50.549"/>
+</kw>
+<doc>Cas de test d'arrivée sur le point d'entrée de l'application avec une URL valide</doc>
+<tag>AUTH</tag>
+<tag>VALID</tag>
+<status status="PASS" starttime="20230615 14:44:46.634" endtime="20230615 14:44:50.550"/>
+</test>
+<test id="s1-s1-s1-t4" name="Invalid Landing" line="36">
+<try>
+<branch type="TRY">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URLCAINVALIDE}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230615 14:44:50.559" level="INFO">Opening browser 'chrome' to base url 'http://credit-auto.qsiconseil'.</msg>
+<msg timestamp="20230615 14:44:51.935" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-16.png"&gt;&lt;img src="selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230615 14:44:51.935" level="FAIL">WebDriverException: Message: unknown error: net::ERR_NAME_NOT_RESOLVED
+  (Session info: chrome=114.0.5735.134)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x007BA813+48355]
+	(No symbol) [0x0074C4B1]
+	(No symbol) [0x00655358]
+	(No symbol) [0x00651B33]
+	(No symbol) [0x00648CA5]
+	(No symbol) [0x00649D0A]
+	(No symbol) [0x00649003]
+	(No symbol) [0x00648355]
+	(No symbol) [0x006482EC]
+	(No symbol) [0x00646F26]
+	(No symbol) [0x00647688]
+	(No symbol) [0x00656B52]
+	(No symbol) [0x006ACF01]
+	(No symbol) [0x0069A73C]
+	(No symbol) [0x006AC922]
+	(No symbol) [0x0069A536]
+	(No symbol) [0x006782DC]
+	(No symbol) [0x006793DD]
+	GetHandleVerifier [0x00A1AABD+2539405]
+	GetHandleVerifier [0x00A5A78F+2800735]
+	GetHandleVerifier [0x00A5456C+2775612]
+	GetHandleVerifier [0x008451E0+616112]
+	(No symbol) [0x00755F8C]
+	(No symbol) [0x00752328]
+	(No symbol) [0x0075240B]
+	(No symbol) [0x00744FF7]
+	BaseThreadInitThunk [0x771900C9+25]
+	RtlGetAppContainerNamedObjectPath [0x77777B4E+286]
+	RtlGetAppContainerNamedObjectPath [0x77777B1E+238]
+</msg>
+<status status="FAIL" starttime="20230615 14:44:50.557" endtime="20230615 14:44:51.937"/>
+</kw>
+<status status="FAIL" starttime="20230615 14:44:50.557" endtime="20230615 14:44:51.937"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Log" library="BuiltIn">
+<arg>URL invalide : test OK</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230615 14:44:51.937" level="INFO">URL invalide : test OK</msg>
+<status status="PASS" starttime="20230615 14:44:51.937" endtime="20230615 14:44:51.937"/>
+</kw>
+<status status="PASS" starttime="20230615 14:44:51.937" endtime="20230615 14:44:51.937"/>
+</branch>
+<status status="PASS" starttime="20230615 14:44:50.556" endtime="20230615 14:44:51.937"/>
+</try>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230615 14:44:51.938" endtime="20230615 14:44:54.004"/>
+</kw>
+<doc>Cas de test d'arrivée sur le point d'entrée de l'application avec une URL invalide</doc>
+<tag>AUTH</tag>
+<tag>INVALID</tag>
+<status status="PASS" starttime="20230615 14:44:50.554" endtime="20230615 14:44:54.006"/>
+</test>
+<doc>Authentication - Connexion Crédit Auto via URL</doc>
+<status status="PASS" starttime="20230615 14:44:35.211" endtime="20230615 14:44:54.010"/>
+</suite>
+<status status="PASS" starttime="20230615 14:44:35.210" endtime="20230615 14:44:54.011"/>
+</suite>
+<status status="PASS" starttime="20230615 14:44:35.193" endtime="20230615 14:44:54.014"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="4" fail="0" skip="0">AUTH</stat>
+<stat pass="2" fail="0" skip="0">INVALID</stat>
+<stat pass="2" fail="0" skip="0">VALID</stat>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="pythonProject">pythonProject</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s1" name="Testsuites">pythonProject.Testsuites</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s1-s1" name="AUTH UrlConnexion">pythonProject.Testsuites.AUTH UrlConnexion</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
