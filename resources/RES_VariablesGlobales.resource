@@ -3,7 +3,7 @@
 ${URLCAVALIDE}          http://credit-auto.qsiconseil.ma/
 ${URLCAINVALIDE}        http://credit-auto.qsiconseil
 ${URLCAINDEXVALIDE}     http://credit-auto.qsiconseil.ma/index
-${BROWSER}              chrome
+${BROWSER_CHROME}       chrome
 
 # Page index
 ${INDEX_TXT_VOUSETES}           L'Administrateur de Crédit Auto

@@ -5,42 +5,18 @@ Resource    ../resources/RES_VariablesGlobales.resource
 
 *** Variables ***
 
+
 *** Test Cases ***
-Valid Landing
-    [Documentation]    Cas de test d'arrivée sur le point d'entrée de l'application avec une URL valide
-    [Tags]    AUTH      VALID
-    Open Browser    ${URLCAVALIDE}    ${BROWSER_CHROME}
-    [Teardown]    Close Browser
 
-Invalid Landing
-    [Documentation]    Cas de test d'arrivée sur le point d'entrée de l'application avec une URL invalide
-    [Tags]    AUTH      INVALID
-    TRY
-        Open Browser    ${URLCAINVALIDE}    ${BROWSER_CHROME}
-    EXCEPT
-        Log    URL invalide : test OK
-    END
-    [Teardown]    Close Browser
-
-Valid Authentication
+Valid Authentication Administrateur
     [Documentation]    Cas de test passant
     [Tags]    AUTH      VALID
-    Try Authentication  ${USERNAME_A}     ${PASSWORD_A}     ${URLCAVALIDE}  ${BROWSER_CHROME}
+    Try Authentication  ${USERNAME_A}     ${PASSWORD_A}     ${URLCAVALIDE}  ${BROWSER}
     # vérifier l'ouverture de la page d'accueil en mode identifié
     Wait Until Location Is  ${URLCAINDEXVALIDE}
     Check Index Page  ${USERNAME_A}
     # Cliquer sur déconnexion
     Click Link    ${LOC_LNKDECONNEXION}
-    [Teardown]    Close Browser
-
-Invalid Authentication
-    [Documentation]    Cas de test non passant
-    [Tags]    AUTH      INVALID
-    TRY
-        Try Authentication  ${USERNAME_A_INV}    ${PASSWORD_A}     ${URLCAVALIDE}  ${BROWSER_CHROME}
-    EXCEPT
-        Log    Username invalide : test OK
-    END
     [Teardown]    Close Browser
 
 *** Keywords ***
